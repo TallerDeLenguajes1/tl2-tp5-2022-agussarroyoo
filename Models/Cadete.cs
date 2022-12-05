@@ -11,8 +11,8 @@ namespace tl2_tp5_2022_agussarroyoo.Models
         private static int cont;
         private int id;
 
-        private string nombre;
-        private string direc;
+        private string ?nombre;
+        private string ?direc;
         
         private long telefono;
 
@@ -39,7 +39,7 @@ namespace tl2_tp5_2022_agussarroyoo.Models
             }
         }
 
-        public string Nombre {
+        public string? Nombre {
             get {
                 return this.nombre;
             }set{
@@ -47,7 +47,7 @@ namespace tl2_tp5_2022_agussarroyoo.Models
             }
         }
 
-        public string Direccion {
+        public string ?Direccion {
             get{
                 return this.direc;
             }set{

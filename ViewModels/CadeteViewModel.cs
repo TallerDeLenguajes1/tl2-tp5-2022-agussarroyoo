@@ -10,8 +10,8 @@ namespace tl2_tp5_2022_agussarroyoo.ViewModels
     public class CadeteViewModel
     {
         private int id;
-        private string nombre;
-        private string direc;
+        private string ?nombre;
+        private string ?direc;
         
         private long telefono;
         
@@ -24,20 +24,24 @@ namespace tl2_tp5_2022_agussarroyoo.ViewModels
             }
         }
         [Required(ErrorMessage="Debe ingresar un nombre")]
-        public string Nombre {
+        public string? Nombre {
             get {
                 return this.nombre;
             }set{
                 this.nombre = value;
             }
         }
-        public string Direccion {
+        [Required(ErrorMessage="Debe ingresar una direccion")]
+
+        public string? Direccion {
             get{
                 return this.direc;
             }set{
                 this.direc = value;
             }
         }
+        [Required(ErrorMessage="Debe ingresar un telefono")]
+
         public long Telefono {
             get{
                 return this.telefono;

@@ -1,0 +1,30 @@
+@model tl2_tp5_2022_agussarroyoo.ViewModels.PedidoViewModel
+
+@{
+    ViewData["Title"] = "Registrar Pedido";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Alta de Pedido</h1>
+</div>
+<form method="post" asp-action="Alta" asp-controller="Pedido">
+  <div class="mb-3">
+    <label asp-for="@Model.idCliente" class="form-label">Cliente  </label>
+      <input asp-for="@Model.idCliente" type="number" class="form-control" id="cliente" aria-describedby="emailHelp" name="idCliente" >
+    <span asp-validation-for="@Model.idCliente"></span>
+  </div>
+  <div class="mb-3">
+    <label asp-for="@Model.idCadete" class="form-label">Cadete</label>
+      <input asp-for="@Model.idCadete" type="number" class="form-control" id="cadete" name = "idCadete">
+    <label asp-validation-for="@Model.idCadete" class="label label-danger"></label>
+
+  </div>
+  <div class="mb-3">
+    <label asp-for="@Model.obs" class="form-label">Observaciones</label>
+      <input asp-for="@Model.obs" type="text" class="form-control" id="observ" name = "obs">
+    <label asp-validation-for="@Model.obs" class="label label-danger"></label>
+  </div>
+  <input type="submit" value="Registrar">
+</form>
+
+@section Scripts { <partial name="_ValidationScriptsPartial" /> } 

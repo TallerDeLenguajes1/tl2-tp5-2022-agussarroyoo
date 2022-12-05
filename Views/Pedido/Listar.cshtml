@@ -1,0 +1,37 @@
+@model List<tl2_tp5_2022_agussarroyoo.ViewModels.PedidoViewModel>
+
+@{
+    ViewData["Title"] = "Listado de Pedidos";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Listado de Pedidos</h1>
+</div>
+<td><a class="btn btn-primary" asp-controller="Pedido" asp-action="Alta" >Registrar nuevo</a></td>
+
+<table class="table table-borderless">
+  <thead>
+    <tr>
+      <th scope="col">ID</th>
+      <th scope="col">ID Cliente</th>
+      <th scope="col">ID Cadete</th>
+      <th scope="col">Observaciones</th>
+    </tr>
+  </thead>
+  <tbody>
+    
+    @foreach (var item in Model)
+      {
+          <tr>
+              <th scope="row">@item.ID</th>
+              <td>@item.idCliente</td>
+              <td>@item.idCadete</td>
+              <td>@item.obs</td>
+              <td><a class="btn btn-primary" asp-controller="Pedido" asp-action="Edit" asp-route-Id=@item.ID>Editar</a></td>
+              <td><a class="btn btn-danger" asp-controller="Pedido" asp-action="Baja" asp-route-Id=@item.ID>Eliminar</a></td>
+          </tr>
+      }
+    
+    
+  </tbody>
+</table>

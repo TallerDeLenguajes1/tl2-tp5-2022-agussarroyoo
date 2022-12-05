@@ -1,0 +1,35 @@
+@model tl2_tp5_2022_agussarroyoo.ViewModels.PedidoViewModel
+
+@{
+    ViewData["Title"] = "Editar Pedido";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Editar Pedido</h1>
+</div>
+<form method="post" >
+
+        <input type="hidden" class="form-control" id="id" aria-describedby="emailHelp" name="ID" value=@Model.ID>
+
+  <div class="mb-3">
+    <label asp-for="@Model.idCliente" class="form-label">Cliente</label>
+        <input asp-for="@Model.idCliente" type="number"  class="form-control" id="idCliente" aria-describedby="emailHelp" name="idCliente" value=@Model.idCliente>
+    <span asp-validation-for="@Model.idCliente"></span>
+  </div>
+
+  <div class="mb-3">
+    <label asp-for="@Model.idCadete"  for="telefono" class="form-label">Cadete</label>
+        <input  asp-for="@Model.idCadete" type="number" class="form-control" id="idCadete" name = "idCadete"  value=@Model.idCadete> 
+    <label asp-validation-for="@Model.idCadete" class="label label-danger"></label>
+  </div>
+
+  <div class="mb-3">
+    <label asp-for="@Model.obs" for="direccion" class="form-label">Observaciones</label>
+        <input asp-for="@Model.obs" type="text"  class="form-control" id="obs" name = "obs"  value=@Model.obs>
+    <label asp-validation-for="@Model.obs" class="label label-danger"></label>
+  </div>
+
+  <input type="submit" value="Actualizar">
+</form>
+
+@section Scripts { <partial name="_ValidationScriptsPartial" /> } 

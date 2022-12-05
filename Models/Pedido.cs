@@ -10,16 +10,17 @@ namespace tl2_tp5_2022_agussarroyoo.Models
         static private  int nro=0;
         private int ID;
         private string obs;
-        private Cliente cliente ;
+        private int idCadete;
+        private int idCliente ;
         private Estado estado;
 
-        public Pedido (string obs, string nombCliente, Direccion direcCliente, long telefCliente, string referencias) {
+        public Pedido (string obs,int idClient,int idCadete) {
             nro++;
             this.ID = nro;
             this.obs = obs;
             this.estado = Estado.Enviado;
-
-            cliente = new Cliente(nombCliente, direcCliente,telefCliente, referencias);
+            this.idCliente = idClient;
+            this.idCadete = idCadete;
         }
 
         public void listarInfo() {
@@ -31,16 +32,29 @@ namespace tl2_tp5_2022_agussarroyoo.Models
         public int id {
             get {
                 return this.ID;
+            }set{
+                this.ID = value;
             }
         }
         public string Obs {
             get{
                 return obs;
+            } set {
+                this.obs = value;
             }
         }
-        public Cliente Cliente {
+        public int IdCliente {
             get {
-                return cliente;
+                return this.idCliente;
+            } set{
+                this.idCliente = value;
+            }
+        }
+        public int IdCadete {
+            get {
+                return this.idCadete;
+            } set {
+                this.idCadete = value;
             }
         }
         public Estado Estado {
